@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yaazh – The Harmony of Freelance Creativity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== General Styles ===== */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1a1a1a, #0f0f0f);
+      color: #eaeaea;
+      overflow-x: hidden;
+    }
+
+    /* ===== Header ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(25, 25, 25, 0.95);
+      padding: 20px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid rgba(247, 200, 115, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    header img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid #f7c873;
+      animation: glow 2.5s infinite alternate;
+    }
+    @keyframes glow {
+      0% { box-shadow: 0 0 20px rgba(247,200,115,0.4); }
+      50% { box-shadow: 0 0 35px rgba(247,200,115,0.7); }
+      100% { box-shadow: 0 0 20px rgba(247,200,115,0.4); }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .brand h1 {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 2.5rem;
+      margin: 0;
+      color: #f7c873;
+      text-shadow: 0 0 15px rgba(247, 200, 115, 0.3);
+      letter-spacing: 2px;
+    }
+    .brand h2 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #cfcfcf;
+      opacity: 0.8;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+    }
+    nav a {
+      color: #f7c873;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #f7c873;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Yazh_Tamil_Musical_Instrument.jpg') center/cover no-repeat fixed;
+      background-color: rgba(0,0,0,0.6);
+      background-blend-mode: overlay;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeSlide 1.5s forwards ease-out 0.3s;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ddd;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeSlide 1.5s forwards ease-out 0.8s;
+    }
+    @keyframes fadeSlide {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating icons */
+    .floating-icons span {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(247,200,115,0.2);
+      animation: floatIcon 8s infinite ease-in-out;
+    }
+    .floating-icons span:nth-child(1){ top: 20%; left: 10%; animation-delay: 0s; }
+    .floating-icons span:nth-child(2){ top: 70%; left: 80%; animation-delay: 2s; }
+    .floating-icons span:nth-child(3){ top: 50%; left: 40%; animation-delay: 4s; }
+    .floating-icons span:nth-child(4){ top: 30%; left: 70%; animation-delay: 6s; }
+
+    @keyframes floatIcon {
+      0%,100%{ transform: translateY(0) rotate(0deg); opacity:0.6; }
+      50%{ transform: translateY(-25px) rotate(360deg); opacity:1; }
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 14px 36px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #f7c873, #f5b94a);
+      color: #111;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(247,200,115,0.4);
+      opacity: 0;
+      animation: fadeSlide 1.5s forwards ease-out 1.2s;
+    }
+    .hero button:hover {
+      background: #fff;
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 0 25px rgba(247,200,115,0.6);
+    }
+
+    /* ===== About, Services, Contact, Footer (unchanged except parallax effect applied) ===== */
+    .about, .services, .contact {
+      position: relative;
+      padding: 90px 10%;
+      text-align: center;
+      background-attachment: fixed;
+    }
+    .about h2, .services h2, .contact h2 {
+      color: #f7c873;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px rgba(247,200,115,0.3);
+    }
+    .about p, .services p, .contact p {
+      color: #cfcfcf;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .service-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+      margin-top: 40px;
+    }
+    .service {
+      background: rgba(42,42,42,0.8);
+      padding: 35px;
+      border-radius: 18px;
+      width: 280px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      border: 1px solid rgba(247,200,115,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(247,200,115,0.3);
+    }
+    footer {
+      background: #0e0e0e;
+      color: #999;
+      text-align: center;
+      padding: 35px;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+    }
+    footer span { color: #f7c873; font-weight: 600; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      header{flex-direction:column;text-align:center;}
+      nav{margin-top:10px;}
+      .service-container{flex-direction:column;align-items:center;}
+      .hero h2{font-size:2rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="logo1.jpg" alt="Yaazh Logo">
+      <div class="brand-text">
+        <h1>Yaazh</h1>
+        <h2>Your Artistic Ambitions Zenith Here</h2>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="floating-icons">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <h2>Bringing the Rhythm of Tradition into the Modern Freelance World</h2>
+    <p>At <strong>Yaazh</strong>, we blend creativity, culture, and cutting-edge skill to deliver extraordinary freelance solutions — where every project resonates like a beautiful melody.</p>
+    <button>Join with Yaazh</button>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Yaazh</h2>
+    <p>Inspired by the ancient Tamil musical instrument <em>“Yaazh”</em>, our startup symbolizes creativity, harmony, and precision.
+    We are a collective of passionate freelancers offering digital design, development, content creation, and strategic services
+    for businesses that value artistry and innovation.</p>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Freelance Services</h2>
+    <div class="service-container">
+      <div class="service"><h3>Web Design</h3><p>Beautiful, responsive, and cultural designs tailored to your brand’s essence.</p></div>
+      <div class="service"><h3>Content Creation</h3><p>Engaging storytelling that connects audiences and builds authenticity.</p></div>
+      <div class="service"><h3>Digital Marketing</h3><p>Strategies that strike a perfect balance between tradition and modernity.</p></div>
+      <div class="service"><h3>App Development</h3><p>Custom applications designed to amplify your business impact.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p>Let's build something meaningful together. Drop us a message below.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea rows="5" placeholder="Your Message"></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 <span>Yaazh</span>. Crafted with culture, creativity, and code.</p>
+  </footer>
+
+</body>
+</html>
